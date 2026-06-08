@@ -6,9 +6,11 @@ const products = [
     nome: "Burger Clássico",
     categoria: "Lanches",
     descricaoCurta: "Pão brioche, hambúrguer artesanal, queijo e molho da casa.",
-    descricaoCompleta: "Um clássico da Burger House com pão brioche macio, hambúrguer artesanal suculento, queijo derretido e molho da casa.",
+    descricaoCompleta:
+      "Um clássico da Burger House com pão brioche macio, hambúrguer artesanal suculento, queijo derretido e molho da casa.",
     preco: 24.9,
-    imagem: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
     maisPedido: true,
     disponivel: true
   },
@@ -17,9 +19,11 @@ const products = [
     nome: "Bacon Burger",
     categoria: "Lanches",
     descricaoCurta: "Hambúrguer artesanal, queijo, bacon crocante e molho especial.",
-    descricaoCompleta: "Hambúrguer artesanal com queijo bem derretido, bacon crocante, salada fresca e molho especial levemente defumado.",
+    descricaoCompleta:
+      "Hambúrguer artesanal com queijo bem derretido, bacon crocante, salada fresca e molho especial levemente defumado.",
     preco: 29.9,
-    imagem: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1553979459-d2229ba7433b?auto=format&fit=crop&w=900&q=80",
     maisPedido: true,
     disponivel: true
   },
@@ -28,9 +32,11 @@ const products = [
     nome: "Chicken Burger",
     categoria: "Lanches",
     descricaoCurta: "Frango empanado, queijo, alface e maionese temperada.",
-    descricaoCompleta: "Frango empanado crocante servido no pão macio com queijo, alface fresca e maionese temperada da casa.",
+    descricaoCompleta:
+      "Frango empanado crocante servido no pão macio com queijo, alface fresca e maionese temperada da casa.",
     preco: 26.9,
-    imagem: "https://images.unsplash.com/photo-1606755962773-d324e9a13086?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1606755962773-d324e9a13086?auto=format&fit=crop&w=900&q=80",
     maisPedido: false,
     disponivel: true
   },
@@ -41,7 +47,8 @@ const products = [
     descricaoCurta: "Refrigerante lata 350ml.",
     descricaoCompleta: "Coca-Cola lata 350ml gelada para acompanhar seu lanche favorito.",
     preco: 6,
-    imagem: "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=900&q=80",
     maisPedido: false,
     disponivel: true
   },
@@ -52,7 +59,8 @@ const products = [
     descricaoCurta: "Suco natural da fruta 300ml.",
     descricaoCompleta: "Suco natural feito na hora, servido gelado em copo de 300ml.",
     preco: 8,
-    imagem: "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?auto=format&fit=crop&w=900&q=80",
     maisPedido: false,
     disponivel: true
   },
@@ -61,9 +69,11 @@ const products = [
     nome: "Água mineral",
     categoria: "Bebidas",
     descricaoCurta: "Água mineral sem gás 500ml.",
-    descricaoCompleta: "Água mineral sem gás 500ml, ideal para uma opção leve e refrescante.",
+    descricaoCompleta:
+      "Água mineral sem gás 500ml, ideal para uma opção leve e refrescante.",
     preco: 4,
-    imagem: "https://images.unsplash.com/photo-1616118132534-381148898bb4?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1616118132534-381148898bb4?auto=format&fit=crop&w=900&q=80",
     maisPedido: false,
     disponivel: true
   },
@@ -74,7 +84,8 @@ const products = [
     descricaoCurta: "Brownie chocolatudo servido com sorvete.",
     descricaoCompleta: "Brownie de chocolate intenso, servido quente com uma bola de sorvete cremoso.",
     preco: 18.9,
-    imagem: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=900&q=80",
     maisPedido: true,
     disponivel: true
   },
@@ -85,7 +96,8 @@ const products = [
     descricaoCurta: "Pudim cremoso com calda de caramelo.",
     descricaoCompleta: "Pudim cremoso da casa com textura leve e calda de caramelo artesanal.",
     preco: 12.9,
-    imagem: "https://images.unsplash.com/photo-1514517220039-8ce97a34a7b6?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1514517220039-8ce97a34a7b6?auto=format&fit=crop&w=900&q=80",
     maisPedido: false,
     disponivel: true
   },
@@ -96,7 +108,8 @@ const products = [
     descricaoCurta: "Milkshake cremoso nos sabores chocolate ou morango.",
     descricaoCompleta: "Milkshake bem cremoso nos sabores chocolate ou morango, finalizado com calda.",
     preco: 16.9,
-    imagem: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=900&q=80",
     maisPedido: false,
     disponivel: true
   },
@@ -105,9 +118,11 @@ const products = [
     nome: "Combo Clássico",
     categoria: "Combos",
     descricaoCurta: "Burger clássico, batata frita e refrigerante.",
-    descricaoCompleta: "Combo com Burger Clássico, porção de batata frita crocante e refrigerante lata 350ml.",
+    descricaoCompleta:
+      "Combo com Burger Clássico, porção de batata frita crocante e refrigerante lata 350ml.",
     preco: 34.9,
-    imagem: "https://images.unsplash.com/photo-1610614819513-58e34989848b?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1610614819513-58e34989848b?auto=format&fit=crop&w=900&q=80",
     maisPedido: true,
     disponivel: true
   },
@@ -118,7 +133,8 @@ const products = [
     descricaoCurta: "Bacon burger, batata frita e refrigerante.",
     descricaoCompleta: "Combo com Bacon Burger, batata frita crocante e refrigerante lata 350ml.",
     preco: 39.9,
-    imagem: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=900&q=80",
     maisPedido: false,
     disponivel: true
   },
@@ -127,9 +143,11 @@ const products = [
     nome: "Combo Família",
     categoria: "Combos",
     descricaoCurta: "4 burgers, 2 batatas grandes e 4 refrigerantes.",
-    descricaoCompleta: "Combo para dividir com 4 burgers, 2 porções grandes de batata frita e 4 refrigerantes.",
+    descricaoCompleta:
+      "Combo para dividir com 4 burgers, 2 porções grandes de batata frita e 4 refrigerantes.",
     preco: 119.9,
-    imagem: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=900&q=80",
+    imagem:
+      "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=900&q=80",
     maisPedido: false,
     disponivel: true
   }

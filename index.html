@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header class="site-header">
     <nav class="navbar" aria-label="Navegação principal">
@@ -24,9 +26,15 @@
   <main>
     <section class="hero" id="demonstracao">
       <div class="hero-content">
-        <span class="eyebrow">Solução demonstrativa para negócios locais</span>
+        <span class="eyebrow">
+          Solução demonstrativa para negócios locais
+        </span>
         <h1>Cardápio digital com QR Code e pedidos pelo WhatsApp</h1>
-        <p>Uma solução simples para pequenos negócios receberem pedidos sem aplicativo, sem taxa e sem complicação.</p>
+        <p>
+          Uma solução simples para pequenos negócios receberem pedidos sem
+          aplicativo, sem taxa e sem complicação.
+        </p>
+
         <div class="hero-actions">
           <a class="primary-button" href="#cardapio">Ver demonstração</a>
           <a class="secondary-button light" href="qrcode.html">
@@ -53,7 +61,10 @@
       <div class="section-heading">
         <span class="eyebrow">Cardápio da demonstração</span>
         <h2>Escolha os itens do pedido</h2>
-        <p>Filtre por categoria, veja os detalhes e monte um pedido completo para enviar pelo WhatsApp.</p>
+        <p>
+          Filtre por categoria, veja os detalhes e monte um pedido completo para
+          enviar pelo WhatsApp.
+        </p>
       </div>
 
       <div class="menu-controls">
@@ -88,12 +99,22 @@
     </section>
   </main>
 
-  <button class="cart-float" id="openCart" type="button" aria-label="Abrir carrinho">
+  <button
+    class="cart-float"
+    id="openCart"
+    type="button"
+    aria-label="Abrir carrinho"
+  >
     <span>Ver pedido</span>
     <strong id="cartCount">0 itens</strong>
   </button>
 
-  <aside class="cart-panel" id="cartPanel" aria-hidden="true" aria-labelledby="cartTitle">
+  <aside
+    class="cart-panel"
+    id="cartPanel"
+    aria-hidden="true"
+    aria-labelledby="cartTitle"
+  >
     <div class="cart-header">
       <div>
         <span class="eyebrow">Seu pedido</span>
@@ -131,7 +152,12 @@
   <div class="screen-overlay" id="screenOverlay" hidden></div>
 
   <div class="modal-overlay" id="productModal" aria-hidden="true">
-    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div
+      class="modal-content"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
       <button
         class="modal-close"
         type="button"
@@ -185,4 +211,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

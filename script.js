@@ -268,19 +268,19 @@ function renderProducts() {
     card.dataset.id = product.id;
 
     card.innerHTML = `
-      ${product.maisPedido ? '<span class="badge">Mais pedido</span>' : ""}
-      <img src="${product.imagem}" alt="${product.nome}" loading="lazy">
+  ${product.maisPedido ? '<span class="badge">Mais pedido</span>' : ""}
+  <img src="${product.imagem}" alt="${product.nome}" loading="lazy">
 
-      <div class="product-info">
-        <span class="product-category">${product.categoria}</span>
-        <h3>${product.nome}</h3>
-        <p>${product.descricaoCurta}</p>
-        <strong class="price">${formatPrice(product.preco)}</strong>
-        <button class="add-button" type="button" data-id="${product.id}">
-          Adicionar ao pedido
-        </button>
-      </div>
-    `;
+  <div class="product-info">
+    <span class="product-category">${product.categoria}</span>
+    <h3>${product.nome}</h3>
+    <p>${product.descricaoCurta}</p>
+    <strong class="price">${formatPrice(product.preco)}</strong>
+    <button class="add-button" type="button" data-id="${product.id}">
+      Adicionar ao pedido
+    </button>
+  </div>
+`;
 
     const image = card.querySelector("img");
     const addButton = card.querySelector(".add-button");

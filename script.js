@@ -331,40 +331,52 @@ function renderCart() {
     const cartItem = document.createElement("div");
     cartItem.className = "cart-item";
 
-    cartItem.innerHTML = `
-      <div class="cart-item-info">
-        <strong>${product.nome}</strong>
-        <span>${formatPrice(product.preco * item.quantity)}</span>
-      </div>
+    const itemInfo = document.createElement("div");
+    itemInfo.className = "cart-item-info";
 
-      <div class="cart-item-actions" aria-label="Quantidade de ${product.nome}">
-        <button
-          type="button"
-          data-action="decrease"
-          data-id="${product.id}"
-          aria-label="Diminuir quantidade"
-        >
-          −
-        </button>
-        <span>${item.quantity}</span>
-        <button
-          type="button"
-          data-action="increase"
-          data-id="${product.id}"
-          aria-label="Aumentar quantidade"
-        >
-          +
-        </button>
+    const itemName = document.createElement("strong");
+    itemName.textContent = product.nome;
 
-        <button
-          type="button"
-          data-action="remove"
-          data-id="${product.id}"
-        >
-          Remover
-        </button>
-      </div>
-    `;
+    const itemSubtotal = document.createElement("span");
+    itemSubtotal.textContent = formatPrice(product.preco * item.quantity);
+
+    const itemActions = document.createElement("div");
+    itemActions.className = "cart-item-actions";
+    itemActions.setAttribute("aria-label", `Quantidade de ${product.nome}`);
+
+    const decreaseButton = createCartActionButton({
+      action: "decrease",
+      productId: product.id,
+      label: "−",
+      ariaLabel: "Diminuir quantidade"
+    });
+
+    const quantityText = document.createElement("span");
+    quantityText.textContent = item.quantity;
+
+    const increaseButton = createCartActionButton({
+      action: "increase",
+      productId: product.id,
+      label: "+",
+      ariaLabel: "Aumentar quantidade"
+    });
+
+    const removeButton = createCartActionButton({
+      action: "remove",
+      productId: product.id,
+      label: "Remover"
+    });
+
+    itemInfo.appendChild(itemName);
+    itemInfo.appendChild(itemSubtotal);
+
+    itemActions.appendChild(decreaseButton);
+    itemActions.appendChild(quantityText);
+    itemActions.appendChild(increaseButton);
+    itemActions.appendChild(removeButton);
+
+    cartItem.appendChild(itemInfo);
+    cartItem.appendChild(itemActions);
 
     cartItems.appendChild(cartItem);
   });
@@ -372,6 +384,20 @@ function renderCart() {
   finishOrder.href = createCartWhatsappLink();
   finishOrder.classList.remove("disabled");
   finishOrder.setAttribute("aria-disabled", "false");
+}
+
+function createCartActionButton({ action, productId, label, ariaLabel }) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.dataset.action = action;
+  button.dataset.id = productId;
+  button.textContent = label;
+
+  if (ariaLabel) {
+    button.setAttribute("aria-label", ariaLabel);
+  }
+
+  return button;
 }
 
 function updatePaymentView() {

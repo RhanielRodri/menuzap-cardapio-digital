@@ -332,22 +332,17 @@ function renderCart() {
     cartItem.className = "cart-item";
 
     cartItem.innerHTML = `
+
       <div class="cart-item-info">
         <strong>${product.nome}</strong>
         <span>${formatPrice(product.preco * item.quantity)}</span>
       </div>
 
       <div class="cart-item-actions">
-        <button type="button" data-action="decrease" data-id="${product.id}">
-          −
-        </button>
+        <button type="button" data-action="decrease" data-id="${product.id}">−</button>
         <span>${item.quantity}</span>
-        <button type="button" data-action="increase" data-id="${product.id}">
-          +
-        </button>
-        <button type="button" data-action="remove" data-id="${product.id}">
-          Remover
-        </button>
+        <button type="button" data-action="increase" data-id="${product.id}">+</button>
+        <button type="button" data-action="remove" data-id="${product.id}">Remover</button>
       </div>
     `;
 

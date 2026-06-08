@@ -349,6 +349,7 @@ function updatePaymentView() {
   const isPixSelected = getSelectedPaymentMethod() === "Pix";
   pixBox.hidden = !isPixSelected;
   copyPixMessage.textContent = "";
+  copyPixMessage.hidden = true;
   renderCart();
 }
 
@@ -493,6 +494,7 @@ paymentOptions.forEach((option) => {
 
 copyPixKeyButton.addEventListener("click", async () => {
   copyPixMessage.textContent = "";
+  copyPixMessage.hidden = true;
 
   try {
     await navigator.clipboard.writeText(pixKey.textContent);
@@ -500,6 +502,7 @@ copyPixKeyButton.addEventListener("click", async () => {
   } catch {
     copyPixMessage.textContent = "Não foi possível copiar a chave Pix.";
   }
+  copyPixMessage.hidden = false;
 });
 
 openCartButton.addEventListener("click", openCart);

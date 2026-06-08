@@ -268,8 +268,7 @@ function renderProducts() {
     card.dataset.id = product.id;
 
     card.innerHTML = `
-  ${product.maisPedido ? '<span class="badge">Mais pedido</span>' : ""}
-  <img src="${product.imagem}" alt="${product.nome}" loading="lazy">
+${product.maisPedido ? '<span class="badge">Mais pedido</span>' : ""} <img src="${product.imagem}" alt="${product.nome}" loading="lazy">
 
   <div class="product-info">
     <span class="product-category">${product.categoria}</span>
@@ -325,6 +324,7 @@ function renderCart() {
     cartItem.className = "cart-item";
 
     cartItem.innerHTML = `
+
       <div class="cart-item-info">
         <strong>${product.nome}</strong>
         <span>${formatPrice(product.preco * item.quantity)}</span>
@@ -345,6 +345,7 @@ function renderCart() {
   finishOrder.classList.remove("disabled");
   finishOrder.setAttribute("aria-disabled", "false");
 }
+
 function updatePaymentView() {
   const isPixSelected = getSelectedPaymentMethod() === "Pix";
   pixBox.hidden = !isPixSelected;

@@ -364,7 +364,8 @@ function renderCart() {
     const removeButton = createCartActionButton({
       action: "remove",
       productId: product.id,
-      label: "Remover"
+      label: "Remover",
+      ariaLabel: "Remover item"
     });
 
     itemInfo.appendChild(itemName);

@@ -325,37 +325,16 @@ function renderCart() {
     cartItem.className = "cart-item";
 
     cartItem.innerHTML = `
-
       <div class="cart-item-info">
         <strong>${product.nome}</strong>
         <span>${formatPrice(product.preco * item.quantity)}</span>
       </div>
 
       <div class="cart-item-actions">
-        <button
-          type="button"
-          data-action="decrease"
-          data-id="${product.id}"
-          aria-label="Diminuir quantidade de ${product.nome}"
-        >
-          &minus;
-        </button>
+        <button type="button" data-action="decrease" data-id="${product.id}" aria-label="Diminuir quantidade de ${product.nome}">&minus;</button>
         <span>${item.quantity}</span>
-        <button
-          type="button"
-          data-action="increase"
-          data-id="${product.id}"
-          aria-label="Aumentar quantidade de ${product.nome}"
-        >
-          +
-        </button>
-        <button
-          type="button"
-          data-action="remove"
-          data-id="${product.id}"
-        >
-          Remover
-        </button>
+        <button type="button" data-action="increase" data-id="${product.id}" aria-label="Aumentar quantidade de ${product.nome}">+</button>
+        <button type="button" data-action="remove" data-id="${product.id}">Remover</button>
       </div>
     `;
 
@@ -366,21 +345,6 @@ function renderCart() {
   finishOrder.classList.remove("disabled");
   finishOrder.setAttribute("aria-disabled", "false");
 }
-
-function createCartActionButton({ action, productId, label, ariaLabel }) {
-  const button = document.createElement("button");
-  button.type = "button";
-  button.dataset.action = action;
-  button.dataset.id = productId;
-  button.textContent = label;
-
-  if (ariaLabel) {
-    button.setAttribute("aria-label", ariaLabel);
-  }
-
-  return button;
-}
-
 function updatePaymentView() {
   const isPixSelected = getSelectedPaymentMethod() === "Pix";
   pixBox.hidden = !isPixSelected;

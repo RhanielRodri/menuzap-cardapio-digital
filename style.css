@@ -171,6 +171,7 @@ img {
 .icon-button:focus-visible,
 .cart-float:focus-visible,
 .quantity-control button:focus-visible,
+.cart-item-actions button:focus-visible,
 .remove-button:focus-visible,
 .copy-pix-button:focus-visible,
 input:focus-visible {
@@ -540,13 +541,16 @@ input:focus-visible {
   font-size: 0.92rem;
 }
 
-.quantity-control {
+.quantity-control,
+.cart-item-actions {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
-.quantity-control button {
+.quantity-control button,
+.cart-item-actions button {
   width: 34px;
   height: 34px;
   border: 0;
@@ -557,12 +561,21 @@ input:focus-visible {
   font-weight: 900;
 }
 
-.quantity-control span {
+.quantity-control span,
+.cart-item-actions span {
   min-width: 22px;
   margin: 0;
   color: var(--black);
   text-align: center;
   font-weight: 900;
+}
+
+.cart-item-actions button[data-action="remove"] {
+  width: auto;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--red);
 }
 
 .remove-button {

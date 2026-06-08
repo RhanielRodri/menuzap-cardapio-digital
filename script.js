@@ -274,50 +274,23 @@ function renderProducts() {
     card.tabIndex = 0;
     card.dataset.id = product.id;
 
-    if (product.maisPedido) {
-      const badge = document.createElement("span");
-      badge.className = "badge";
-      badge.textContent = "Mais pedido";
-      card.appendChild(badge);
-    }
+    card.innerHTML = `
+      ${product.maisPedido ? '<span class="badge">Mais pedido</span>' : ""}
+      <img src="${product.imagem}" alt="${product.nome}" loading="lazy">
 
-    const image = document.createElement("img");
-    image.src = product.imagem;
-    image.alt = product.nome;
-    image.loading = "lazy";
-    applyImageFallback(image);
+      <div class="product-info">
+        <span class="product-category">${product.categoria}</span>
+        <h3>${product.nome}</h3>
+        <p>${product.descricaoCurta}</p>
+        <strong class="price">${formatPrice(product.preco)}</strong>
+        <button class="add-button" type="button" data-id="${product.id}">
+          Adicionar ao pedido
+        </button>
+      </div>
+    `;
 
-    const productInfo = document.createElement("div");
-    productInfo.className = "product-info";
-
-    const category = document.createElement("span");
-    category.className = "product-category";
-    category.textContent = product.categoria;
-
-    const title = document.createElement("h3");
-    title.textContent = product.nome;
-
-    const description = document.createElement("p");
-    description.textContent = product.descricaoCurta;
-
-    const price = document.createElement("strong");
-    price.className = "price";
-    price.textContent = formatPrice(product.preco);
-
-    const addButton = document.createElement("button");
-    addButton.className = "add-button";
-    addButton.type = "button";
-    addButton.dataset.id = product.id;
-    addButton.textContent = "Adicionar ao pedido";
-
-    productInfo.appendChild(category);
-    productInfo.appendChild(title);
-    productInfo.appendChild(description);
-    productInfo.appendChild(price);
-    productInfo.appendChild(addButton);
-
-    card.appendChild(image);
-    card.appendChild(productInfo);
+    const image = card.querySelector("img");
+    const addButton = card.querySelector(".add-button");
 
     card.addEventListener("click", () => openModal(product.id));
     card.addEventListener("keydown", (event) => {
@@ -332,6 +305,7 @@ function renderProducts() {
       openCart();
     });
 
+    applyImageFallback(image);
     productsGrid.appendChild(card);
   });
 }
@@ -358,11 +332,12 @@ function renderCart() {
     cartItem.className = "cart-item";
 
     cartItem.innerHTML = `
-      <div>
+      <div class="cart-item-info">
         <strong>${product.nome}</strong>
         <span>${formatPrice(product.preco * item.quantity)}</span>
       </div>
-      <div class="quantity-control" aria-label="Quantidade de ${product.nome}">
+
+      <div class="cart-item-actions" aria-label="Quantidade de ${product.nome}">
         <button
           type="button"
           data-action="decrease"
@@ -380,15 +355,15 @@ function renderCart() {
         >
           +
         </button>
+
+        <button
+          type="button"
+          data-action="remove"
+          data-id="${product.id}"
+        >
+          Remover
+        </button>
       </div>
-      <button
-        class="remove-button"
-        type="button"
-        data-action="remove"
-        data-id="${product.id}"
-      >
-        Remover
-      </button>
     `;
 
     cartItems.appendChild(cartItem);

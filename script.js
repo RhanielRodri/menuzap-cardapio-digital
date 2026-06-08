@@ -11,10 +11,9 @@ const products = [
       "Um clássico da Burger House com pão brioche macio, hambúrguer artesanal suculento, " +
       "queijo derretido e molho da casa.",
     preco: 24.9,
-    imagem:
-      "assets/products/burger-classico.jpg",
+    imagem: "assets/products/burger-classico.jpg",
     maisPedido: true,
-    disponivel: true
+    disponivel: true,
   },
   {
     id: 2,
@@ -25,10 +24,9 @@ const products = [
       "Hambúrguer artesanal com queijo bem derretido, bacon crocante, salada fresca " +
       "e molho especial levemente defumado.",
     preco: 29.9,
-    imagem:
-      "assets/products/bacon-burger.jpg",
+    imagem: "assets/products/bacon-burger.jpg",
     maisPedido: true,
-    disponivel: true
+    disponivel: true,
   },
   {
     id: 3,
@@ -39,10 +37,9 @@ const products = [
       "Frango empanado crocante servido no pão macio com queijo, alface fresca " +
       "e maionese temperada da casa.",
     preco: 26.9,
-    imagem:
-      "assets/products/chicken-burger.jpg",
+    imagem: "assets/products/chicken-burger.jpg",
     maisPedido: false,
-    disponivel: true
+    disponivel: true,
   },
   {
     id: 4,
@@ -51,10 +48,9 @@ const products = [
     descricaoCurta: "Refrigerante lata 350ml.",
     descricaoCompleta: "Coca-Cola lata 350ml gelada para acompanhar seu lanche favorito.",
     preco: 6,
-    imagem:
-      "assets/products/coca-cola.jpg",
+    imagem: "assets/products/coca-cola.jpg",
     maisPedido: false,
-    disponivel: true
+    disponivel: true,
   },
   {
     id: 5,
@@ -63,10 +59,9 @@ const products = [
     descricaoCurta: "Suco natural da fruta 300ml.",
     descricaoCompleta: "Suco natural feito na hora, servido gelado em copo de 300ml.",
     preco: 8,
-    imagem:
-      "assets/products/suco-natural.jpg",
+    imagem: "assets/products/suco-natural.jpg",
     maisPedido: false,
-    disponivel: true
+    disponivel: true,
   },
   {
     id: 6,
@@ -76,10 +71,9 @@ const products = [
     descricaoCompleta:
       "Água mineral sem gás 500ml, ideal para uma opção leve e refrescante.",
     preco: 4,
-    imagem:
-      "assets/products/agua-mineral.jpg",
+    imagem: "assets/products/agua-mineral.jpg",
     maisPedido: false,
-    disponivel: true
+    disponivel: true,
   },
   {
     id: 7,
@@ -89,10 +83,9 @@ const products = [
     descricaoCompleta:
       "Brownie de chocolate intenso, servido quente com uma bola de sorvete cremoso.",
     preco: 18.9,
-    imagem:
-      "assets/products/brownie-sorvete.jpg",
+    imagem: "assets/products/brownie-sorvete.jpg",
     maisPedido: true,
-    disponivel: true
+    disponivel: true,
   },
   {
     id: 8,
@@ -101,10 +94,9 @@ const products = [
     descricaoCurta: "Pudim cremoso com calda de caramelo.",
     descricaoCompleta: "Pudim cremoso da casa com textura leve e calda de caramelo artesanal.",
     preco: 12.9,
-    imagem:
-      "assets/products/pudim.jpg",
+    imagem: "assets/products/pudim.jpg",
     maisPedido: false,
-    disponivel: true
+    disponivel: true,
   },
   {
     id: 9,
@@ -114,10 +106,9 @@ const products = [
     descricaoCompleta:
       "Milkshake bem cremoso nos sabores chocolate ou morango, finalizado com calda.",
     preco: 16.9,
-    imagem:
-      "assets/products/milkshake.jpg",
+    imagem: "assets/products/milkshake.jpg",
     maisPedido: false,
-    disponivel: true
+    disponivel: true,
   },
   {
     id: 10,
@@ -127,10 +118,9 @@ const products = [
     descricaoCompleta:
       "Combo com Burger Clássico, porção de batata frita crocante e refrigerante lata 350ml.",
     preco: 34.9,
-    imagem:
-      "assets/products/combo-classico.jpg",
+    imagem: "assets/products/combo-classico.jpg",
     maisPedido: true,
-    disponivel: true
+    disponivel: true,
   },
   {
     id: 11,
@@ -139,10 +129,9 @@ const products = [
     descricaoCurta: "Bacon burger, batata frita e refrigerante.",
     descricaoCompleta: "Combo com Bacon Burger, batata frita crocante e refrigerante lata 350ml.",
     preco: 39.9,
-    imagem:
-      "assets/products/combo-bacon.jpg",
+    imagem: "assets/products/combo-bacon.jpg",
     maisPedido: false,
-    disponivel: true
+    disponivel: true,
   },
   {
     id: 12,
@@ -152,10 +141,9 @@ const products = [
     descricaoCompleta:
       "Combo para dividir com 4 burgers, 2 porções grandes de batata frita e 4 refrigerantes.",
     preco: 119.9,
-    imagem:
-      "assets/products/combo-familia.jpg",
+    imagem: "assets/products/combo-familia.jpg",
     maisPedido: false,
-    disponivel: true
+    disponivel: true,
   }
 ];
 

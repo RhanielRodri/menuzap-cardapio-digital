@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MenuZap | Gerador de QR Code</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegação principal">
+      <a class="brand" href="index.html">MenuZap</a>
+      <div class="nav-links">
+        <a href="index.html#demonstracao">Demonstração</a>
+        <a href="index.html#cardapio">Cardápio</a>
+        <a href="qrcode.html">QR Code</a>
+        <a href="index.html#contato">Contato</a>
+      </div>
+      <a class="nav-button" href="index.html">Ver demo</a>
+    </nav>
+  </header>
+
+  <main class="qr-page">
+    <div class="qr-layout">
+      <section class="qr-hero">
+        <span class="eyebrow">Ferramenta MenuZap</span>
+        <h1>Gerador de QR Code para cardápio digital</h1>
+        <p>Digite a URL do seu cardápio e gere um QR Code para colocar em mesas, embalagens, balcão ou redes sociais.</p>
+      </section>
+
+      <section class="qr-card" aria-labelledby="qrTitle">
+        <h2 id="qrTitle">Criar QR Code</h2>
+        <form class="qr-form" id="qrForm">
+          <label for="urlInput">URL do cardápio</label>
+          <input id="urlInput" type="url" value="https://seu-cardapio.vercel.app" placeholder="https://seu-cardapio.vercel.app">
+          <button class="primary-button full-button" type="submit">Gerar QR Code</button>
+        </form>
+
+        <p class="form-message" id="qrMessage" role="alert"></p>
+
+        <div class="qr-preview">
+          <p class="qr-placeholder" id="qrPlaceholder">O QR Code gerado aparecerá aqui.</p>
+          <div class="qr-result" id="qrResult" aria-live="polite"></div>
+        </div>
+
+        <div class="qr-actions">
+          <button class="secondary-button" id="copyLink" type="button">Copiar link</button>
+          <button class="secondary-button" id="downloadQr" type="button" hidden>Baixar QR Code</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="qrcode.js"></script>
+</body>
+</html>

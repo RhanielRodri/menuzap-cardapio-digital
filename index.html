@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MenuZap | Cardápio Digital com QR Code</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegação principal">
+      <a class="brand" href="index.html">MenuZap</a>
+      <div class="nav-links">
+        <a href="#demonstracao">Demonstração</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="qrcode.html">QR Code</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <a class="nav-button" href="qrcode.html">Gerar QR</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="demonstracao">
+      <div class="hero-content">
+        <span class="eyebrow">Solução demonstrativa para negócios locais</span>
+        <h1>Cardápio digital com QR Code e pedidos pelo WhatsApp</h1>
+        <p>Uma solução simples para pequenos negócios receberem pedidos sem aplicativo, sem taxa e sem complicação.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#cardapio">Ver demonstração</a>
+          <a class="secondary-button light" href="qrcode.html">Gerar QR Code</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo-strip" aria-label="Demonstração MenuZap">
+      <div>
+        <span class="eyebrow">Demo MenuZap</span>
+        <h2>Burger House</h2>
+        <p>Aberto hoje das 18h às 23h</p>
+      </div>
+      <div class="demo-metrics">
+        <span>Busca rápida</span>
+        <span>Carrinho completo</span>
+        <span>Pedido no WhatsApp</span>
+      </div>
+    </section>
+
+    <section class="menu-section" id="cardapio">
+      <div class="section-heading">
+        <span class="eyebrow">Cardápio da demonstração</span>
+        <h2>Escolha os itens do pedido</h2>
+        <p>Filtre por categoria, veja os detalhes e monte um pedido completo para enviar pelo WhatsApp.</p>
+      </div>
+
+      <div class="menu-controls">
+        <label class="search-label" for="searchInput">Buscar produto</label>
+        <input id="searchInput" type="search" placeholder="Buscar produto..." autocomplete="off">
+        <div class="filter-buttons" aria-label="Filtros por categoria">
+          <button class="filter-button active" type="button" data-category="Todos">Todos</button>
+          <button class="filter-button" type="button" data-category="Lanches">Lanches</button>
+          <button class="filter-button" type="button" data-category="Bebidas">Bebidas</button>
+          <button class="filter-button" type="button" data-category="Sobremesas">Sobremesas</button>
+          <button class="filter-button" type="button" data-category="Combos">Combos</button>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>Nenhum produto encontrado.</p>
+    </section>
+  </main>
+
+  <button class="cart-float" id="openCart" type="button" aria-label="Abrir carrinho">
+    <span>Ver pedido</span>
+    <strong id="cartCount">0 itens</strong>
+  </button>
+
+  <aside class="cart-panel" id="cartPanel" aria-hidden="true" aria-labelledby="cartTitle">
+    <div class="cart-header">
+      <div>
+        <span class="eyebrow">Seu pedido</span>
+        <h2 id="cartTitle">Resumo do pedido</h2>
+      </div>
+      <button class="icon-button" id="closeCart" type="button" aria-label="Fechar carrinho">×</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <p class="cart-empty" id="cartEmpty">Seu pedido está vazio.</p>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <a class="primary-button full-button disabled" id="finishOrder" href="#" target="_blank" rel="noopener" aria-disabled="true">Finalizar pelo WhatsApp</a>
+    </div>
+  </aside>
+
+  <div class="screen-overlay" id="screenOverlay" hidden></div>
+
+  <div class="modal-overlay" id="productModal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" id="closeModal" aria-label="Fechar modal">×</button>
+      <img id="modalImage" src="" alt="">
+      <div class="modal-body">
+        <span class="modal-category" id="modalCategory"></span>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <strong id="modalPrice"></strong>
+        <div class="modal-actions">
+          <button class="primary-button" id="modalAddToCart" type="button">Adicionar ao pedido</button>
+          <a class="secondary-button" id="modalWhatsapp" href="#" target="_blank" rel="noopener">Pedir somente este item</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" id="contato">
+    <div>
+      <strong>MenuZap</strong>
+      <p>Solução demonstrativa para cardápios digitais.</p>
+    </div>
+    <div>
+      <strong>Burger House</strong>
+      <p>Rua das Palmeiras, 123 - Centro</p>
+    </div>
+    <div>
+      <strong>Horário</strong>
+      <p>Segunda a domingo, das 18h às 23h</p>
+    </div>
+    <div>
+      <strong>WhatsApp</strong>
+      <p>(00) 00000-0000</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

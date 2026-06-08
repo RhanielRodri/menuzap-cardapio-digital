@@ -21,7 +21,7 @@ function generateQrCode(url) {
     height: 240,
     colorDark: "#151515",
     colorLight: "#ffffff",
-    correctLevel: QRCode.CorrectLevel.H
+    correctLevel: QRCode.CorrectLevel.H,
   });
 
   qrPlaceholder.hidden = true;

@@ -177,10 +177,15 @@ function createSingleWhatsappLink(productName) {
 function createCartWhatsappLink() {
   const lines = cart.map((item) => {
     const product = getProductById(item.id);
-    return `${item.quantity}x ${product.nome} - ${formatPrice(product.preco * item.quantity)}`;
+    return `${item.quantity}x ${product.nome} - ${formatPrice(
+      product.preco * item.quantity
+    )}`;
   });
 
-  const message = `Olá! Quero fazer um pedido:\n\n${lines.join("\n")}\n\nTotal: ${formatPrice(getCartTotal())}`;
+  const message = `Olá! Quero fazer um pedido:\n\n${lines.join(
+    "\n"
+  )}\n\nTotal: ${formatPrice(getCartTotal())}`;
+
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
@@ -203,8 +208,10 @@ function getFilteredProducts() {
   const searchTerm = searchInput.value.trim().toLowerCase();
 
   return products.filter((product) => {
-    const matchesCategory = activeCategory === "Todos" || product.categoria === activeCategory;
+    const matchesCategory =
+      activeCategory === "Todos" || product.categoria === activeCategory;
     const matchesSearch = product.nome.toLowerCase().includes(searchTerm);
+
     return product.disponivel && matchesCategory && matchesSearch;
   });
 }
@@ -228,7 +235,9 @@ function renderProducts() {
         <h3>${product.nome}</h3>
         <p>${product.descricaoCurta}</p>
         <span class="price">${formatPrice(product.preco)}</span>
-        <button class="add-button" type="button" data-id="${product.id}">Adicionar ao pedido</button>
+        <button class="add-button" type="button" data-id="${product.id}">
+          Adicionar ao pedido
+        </button>
       </div>
     `;
 
@@ -276,11 +285,32 @@ function renderCart() {
         <span>${formatPrice(product.preco * item.quantity)}</span>
       </div>
       <div class="quantity-control" aria-label="Quantidade de ${product.nome}">
-        <button type="button" data-action="decrease" data-id="${product.id}" aria-label="Diminuir quantidade">−</button>
+        <button
+          type="button"
+          data-action="decrease"
+          data-id="${product.id}"
+          aria-label="Diminuir quantidade"
+        >
+          −
+        </button>
         <span>${item.quantity}</span>
-        <button type="button" data-action="increase" data-id="${product.id}" aria-label="Aumentar quantidade">+</button>
+        <button
+          type="button"
+          data-action="increase"
+          data-id="${product.id}"
+          aria-label="Aumentar quantidade"
+        >
+          +
+        </button>
       </div>
-      <button class="remove-button" type="button" data-action="remove" data-id="${product.id}">Remover</button>
+      <button
+        class="remove-button"
+        type="button"
+        data-action="remove"
+        data-id="${product.id}"
+      >
+        Remover
+      </button>
     `;
 
     cartItems.appendChild(cartItem);

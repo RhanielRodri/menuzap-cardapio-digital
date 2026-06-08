@@ -29,7 +29,9 @@
         <p>Uma solução simples para pequenos negócios receberem pedidos sem aplicativo, sem taxa e sem complicação.</p>
         <div class="hero-actions">
           <a class="primary-button" href="#cardapio">Ver demonstração</a>
-          <a class="secondary-button light" href="qrcode.html">Gerar QR Code</a>
+          <a class="secondary-button light" href="qrcode.html">
+            Gerar QR Code
+          </a>
         </div>
       </div>
     </section>
@@ -56,13 +58,28 @@
 
       <div class="menu-controls">
         <label class="search-label" for="searchInput">Buscar produto</label>
-        <input id="searchInput" type="search" placeholder="Buscar produto..." autocomplete="off">
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Buscar produto..."
+          autocomplete="off"
+        >
         <div class="filter-buttons" aria-label="Filtros por categoria">
-          <button class="filter-button active" type="button" data-category="Todos">Todos</button>
-          <button class="filter-button" type="button" data-category="Lanches">Lanches</button>
-          <button class="filter-button" type="button" data-category="Bebidas">Bebidas</button>
-          <button class="filter-button" type="button" data-category="Sobremesas">Sobremesas</button>
-          <button class="filter-button" type="button" data-category="Combos">Combos</button>
+          <button class="filter-button active" type="button" data-category="Todos">
+            Todos
+          </button>
+          <button class="filter-button" type="button" data-category="Lanches">
+            Lanches
+          </button>
+          <button class="filter-button" type="button" data-category="Bebidas">
+            Bebidas
+          </button>
+          <button class="filter-button" type="button" data-category="Sobremesas">
+            Sobremesas
+          </button>
+          <button class="filter-button" type="button" data-category="Combos">
+            Combos
+          </button>
         </div>
       </div>
 
@@ -82,7 +99,14 @@
         <span class="eyebrow">Seu pedido</span>
         <h2 id="cartTitle">Resumo do pedido</h2>
       </div>
-      <button class="icon-button" id="closeCart" type="button" aria-label="Fechar carrinho">×</button>
+      <button
+        class="icon-button"
+        id="closeCart"
+        type="button"
+        aria-label="Fechar carrinho"
+      >
+        ×
+      </button>
     </div>
     <div class="cart-items" id="cartItems"></div>
     <p class="cart-empty" id="cartEmpty">Seu pedido está vazio.</p>
@@ -91,7 +115,16 @@
         <span>Total</span>
         <strong id="cartTotal">R$ 0,00</strong>
       </div>
-      <a class="primary-button full-button disabled" id="finishOrder" href="#" target="_blank" rel="noopener" aria-disabled="true">Finalizar pelo WhatsApp</a>
+      <a
+        class="primary-button full-button disabled"
+        id="finishOrder"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        aria-disabled="true"
+      >
+        Finalizar pelo WhatsApp
+      </a>
     </div>
   </aside>
 
@@ -99,7 +132,14 @@
 
   <div class="modal-overlay" id="productModal" aria-hidden="true">
     <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" type="button" id="closeModal" aria-label="Fechar modal">×</button>
+      <button
+        class="modal-close"
+        type="button"
+        id="closeModal"
+        aria-label="Fechar modal"
+      >
+        ×
+      </button>
       <img id="modalImage" src="" alt="">
       <div class="modal-body">
         <span class="modal-category" id="modalCategory"></span>
@@ -107,8 +147,18 @@
         <p id="modalDescription"></p>
         <strong id="modalPrice"></strong>
         <div class="modal-actions">
-          <button class="primary-button" id="modalAddToCart" type="button">Adicionar ao pedido</button>
-          <a class="secondary-button" id="modalWhatsapp" href="#" target="_blank" rel="noopener">Pedir somente este item</a>
+          <button class="primary-button" id="modalAddToCart" type="button">
+            Adicionar ao pedido
+          </button>
+          <a
+            class="secondary-button"
+            id="modalWhatsapp"
+            href="#"
+            target="_blank"
+            rel="noopener"
+          >
+            Pedir somente este item
+          </a>
         </div>
       </div>
     </div>

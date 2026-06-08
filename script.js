@@ -8,7 +8,8 @@ const products = [
     categoria: "Lanches",
     descricaoCurta: "PÃ£o brioche, hambÃºrguer artesanal, queijo e molho da casa.",
     descricaoCompleta:
-      "Um clÃ¡ssico da Burger House com pÃ£o brioche macio, hambÃºrguer artesanal suculento, queijo derretido e molho da casa.",
+      "Um clÃ¡ssico da Burger House com pÃ£o brioche macio, hambÃºrguer artesanal suculento, " +
+      "queijo derretido e molho da casa.",
     preco: 24.9,
     imagem:
       "assets/products/burger-classico.jpg",
@@ -21,7 +22,8 @@ const products = [
     categoria: "Lanches",
     descricaoCurta: "HambÃºrguer artesanal, queijo, bacon crocante e molho especial.",
     descricaoCompleta:
-      "HambÃºrguer artesanal com queijo bem derretido, bacon crocante, salada fresca e molho especial levemente defumado.",
+      "HambÃºrguer artesanal com queijo bem derretido, bacon crocante, salada fresca " +
+      "e molho especial levemente defumado.",
     preco: 29.9,
     imagem:
       "assets/products/bacon-burger.jpg",
@@ -34,7 +36,8 @@ const products = [
     categoria: "Lanches",
     descricaoCurta: "Frango empanado, queijo, alface e maionese temperada.",
     descricaoCompleta:
-      "Frango empanado crocante servido no pÃ£o macio com queijo, alface fresca e maionese temperada da casa.",
+      "Frango empanado crocante servido no pÃ£o macio com queijo, alface fresca " +
+      "e maionese temperada da casa.",
     preco: 26.9,
     imagem:
       "assets/products/chicken-burger.jpg",
@@ -83,7 +86,8 @@ const products = [
     nome: "Brownie com sorvete",
     categoria: "Sobremesas",
     descricaoCurta: "Brownie chocolatudo servido com sorvete.",
-    descricaoCompleta: "Brownie de chocolate intenso, servido quente com uma bola de sorvete cremoso.",
+    descricaoCompleta:
+      "Brownie de chocolate intenso, servido quente com uma bola de sorvete cremoso.",
     preco: 18.9,
     imagem:
       "assets/products/brownie-sorvete.jpg",
@@ -107,7 +111,8 @@ const products = [
     nome: "Milkshake",
     categoria: "Sobremesas",
     descricaoCurta: "Milkshake cremoso nos sabores chocolate ou morango.",
-    descricaoCompleta: "Milkshake bem cremoso nos sabores chocolate ou morango, finalizado com calda.",
+    descricaoCompleta:
+      "Milkshake bem cremoso nos sabores chocolate ou morango, finalizado com calda.",
     preco: 16.9,
     imagem:
       "assets/products/milkshake.jpg",
@@ -339,10 +344,30 @@ function renderCart() {
       </div>
 
       <div class="cart-item-actions">
-        <button type="button" data-action="decrease" data-id="${product.id}" aria-label="Diminuir quantidade de ${product.nome}">−</button>
+        <button
+          type="button"
+          data-action="decrease"
+          data-id="${product.id}"
+          aria-label="Diminuir quantidade de ${product.nome}"
+        >
+          −
+        </button>
         <span>${item.quantity}</span>
-        <button type="button" data-action="increase" data-id="${product.id}" aria-label="Aumentar quantidade de ${product.nome}">+</button>
-        <button type="button" data-action="remove" data-id="${product.id}">Remover</button>
+        <button
+          type="button"
+          data-action="increase"
+          data-id="${product.id}"
+          aria-label="Aumentar quantidade de ${product.nome}"
+        >
+          +
+        </button>
+        <button
+          type="button"
+          data-action="remove"
+          data-id="${product.id}"
+        >
+          Remover
+        </button>
       </div>
     `;
 
@@ -466,7 +491,9 @@ function closeModal() {
 searchInput.addEventListener("input", renderProducts);
 
 filterButtons.forEach((button) => {
-  button.addEventListener("click", () => setActiveCategory(button.dataset.category));
+  button.addEventListener("click", () =>
+    setActiveCategory(button.dataset.category)
+  );
 });
 
 cartItems.addEventListener("click", (event) => {

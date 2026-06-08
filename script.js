@@ -176,6 +176,11 @@ const cartCount = document.querySelector("#cartCount");
 const cartTotal = document.querySelector("#cartTotal");
 const finishOrder = document.querySelector("#finishOrder");
 const screenOverlay = document.querySelector("#screenOverlay");
+const paymentOptions = document.querySelectorAll("input[name='paymentMethod']");
+const pixBox = document.querySelector("#pixBox");
+const pixKey = document.querySelector("#pixKey");
+const copyPixKeyButton = document.querySelector("#copyPixKey");
+const copyPixMessage = document.querySelector("#copyPixMessage");
 
 let activeCategory = "Todos";
 let currentProductId = null;
@@ -200,10 +205,15 @@ function createCartWhatsappLink() {
       product.preco * item.quantity
     )}`;
   });
+  const paymentMethod = getSelectedPaymentMethod();
+  const pixLine =
+    paymentMethod === "Pix" ? `\nChave Pix: ${pixKey.textContent}` : "";
 
   const message = `Olá! Quero fazer um pedido:\n\n${lines.join(
     "\n"
-  )}\n\nTotal: ${formatPrice(getCartTotal())}`;
+  )}\n\nTotal: ${formatPrice(
+    getCartTotal()
+  )}\n\nForma de pagamento: ${paymentMethod}${pixLine}`;
 
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
@@ -221,6 +231,14 @@ function getCartTotal() {
 
 function getCartQuantity() {
   return cart.reduce((total, item) => total + item.quantity, 0);
+}
+
+function getSelectedPaymentMethod() {
+  const selectedPayment = document.querySelector(
+    "input[name='paymentMethod']:checked"
+  );
+
+  return selectedPayment ? selectedPayment.value : "Pix";
 }
 
 function getFilteredProducts() {
@@ -381,6 +399,13 @@ function renderCart() {
   finishOrder.setAttribute("aria-disabled", "false");
 }
 
+function updatePaymentView() {
+  const isPixSelected = getSelectedPaymentMethod() === "Pix";
+  pixBox.hidden = !isPixSelected;
+  copyPixMessage.textContent = "";
+  renderCart();
+}
+
 function setActiveCategory(category) {
   activeCategory = category;
 
@@ -514,6 +539,21 @@ finishOrder.addEventListener("click", (event) => {
   }
 });
 
+paymentOptions.forEach((option) => {
+  option.addEventListener("change", updatePaymentView);
+});
+
+copyPixKeyButton.addEventListener("click", async () => {
+  copyPixMessage.textContent = "";
+
+  try {
+    await navigator.clipboard.writeText(pixKey.textContent);
+    copyPixMessage.textContent = "Chave Pix copiada!";
+  } catch {
+    copyPixMessage.textContent = "Não foi possível copiar a chave Pix.";
+  }
+});
+
 openCartButton.addEventListener("click", openCart);
 closeCartButton.addEventListener("click", closeCart);
 screenOverlay.addEventListener("click", closeCart);
@@ -539,3 +579,4 @@ document.addEventListener("keydown", (event) => {
 
 renderProducts();
 renderCart();
+updatePaymentView();

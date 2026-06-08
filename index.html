@@ -132,6 +132,40 @@
     <div class="cart-items" id="cartItems"></div>
     <p class="cart-empty" id="cartEmpty">Seu pedido está vazio.</p>
     <div class="cart-footer">
+      <section class="payment-box" aria-labelledby="paymentTitle">
+        <h3 id="paymentTitle">Forma de pagamento</h3>
+
+        <div class="payment-options">
+          <label class="payment-option">
+            <input type="radio" name="paymentMethod" value="Pix" checked>
+            <span>Pix</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="paymentMethod" value="Dinheiro">
+            <span>Dinheiro</span>
+          </label>
+
+          <label class="payment-option">
+            <input
+              type="radio"
+              name="paymentMethod"
+              value="Cartão na entrega/retirada"
+            >
+            <span>Cartão na entrega/retirada</span>
+          </label>
+        </div>
+
+        <div class="pix-box" id="pixBox">
+          <span>Chave Pix</span>
+          <strong id="pixKey">pix@burgerhouse.com</strong>
+          <button class="copy-pix-button" id="copyPixKey" type="button">
+            Copiar chave Pix
+          </button>
+          <p class="copy-message" id="copyPixMessage" aria-live="polite"></p>
+        </div>
+      </section>
+
       <div class="cart-total">
         <span>Total</span>
         <strong id="cartTotal">R$ 0,00</strong>

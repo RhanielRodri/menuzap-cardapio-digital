@@ -172,6 +172,7 @@ img {
 .cart-float:focus-visible,
 .quantity-control button:focus-visible,
 .remove-button:focus-visible,
+.copy-pix-button:focus-visible,
 input:focus-visible {
   outline: 3px solid rgba(255, 159, 28, 0.55);
   outline-offset: 3px;
@@ -585,6 +586,85 @@ input:focus-visible {
   gap: 14px;
   padding-top: 18px;
   border-top: 1px solid var(--gray-strong);
+}
+
+.payment-box {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--gray-strong);
+  border-radius: 18px;
+  background: #fffaf4;
+}
+
+.payment-box h3 {
+  margin: 0;
+  color: var(--black);
+  font-size: 1rem;
+}
+
+.payment-options {
+  display: grid;
+  gap: 8px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border: 1px solid var(--gray-strong);
+  border-radius: 14px;
+  background: var(--white);
+  color: var(--black);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.payment-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--red);
+}
+
+.pix-box {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 14px;
+  background: var(--orange-soft);
+}
+
+.pix-box span {
+  color: var(--red-dark);
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.pix-box strong {
+  color: var(--black);
+  overflow-wrap: anywhere;
+}
+
+.copy-pix-button {
+  width: fit-content;
+  min-height: 40px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 14px;
+  background: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.copy-message {
+  min-height: 18px;
+  margin: 0;
+  color: var(--red-dark);
+  font-size: 0.9rem;
+  font-weight: 900;
 }
 
 .cart-total {

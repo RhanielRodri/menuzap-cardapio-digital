@@ -1,14 +1,14 @@
-﻿const whatsappNumber = "5500000000000";
+const whatsappNumber = "5500000000000";
 const placeholderImage = "assets/products/placeholder.jpg";
 
 const products = [
   {
     id: 1,
-    nome: "Burger ClÃ¡ssico",
+    nome: "Burger Clássico",
     categoria: "Lanches",
-    descricaoCurta: "PÃ£o brioche, hambÃºrguer artesanal, queijo e molho da casa.",
+    descricaoCurta: "Pão brioche, hambúrguer artesanal, queijo e molho da casa.",
     descricaoCompleta:
-      "Um clÃ¡ssico da Burger House com pÃ£o brioche macio, hambÃºrguer artesanal suculento, " +
+      "Um clássico da Burger House com pão brioche macio, hambúrguer artesanal suculento, " +
       "queijo derretido e molho da casa.",
     preco: 24.9,
     imagem:
@@ -20,9 +20,9 @@ const products = [
     id: 2,
     nome: "Bacon Burger",
     categoria: "Lanches",
-    descricaoCurta: "HambÃºrguer artesanal, queijo, bacon crocante e molho especial.",
+    descricaoCurta: "Hambúrguer artesanal, queijo, bacon crocante e molho especial.",
     descricaoCompleta:
-      "HambÃºrguer artesanal com queijo bem derretido, bacon crocante, salada fresca " +
+      "Hambúrguer artesanal com queijo bem derretido, bacon crocante, salada fresca " +
       "e molho especial levemente defumado.",
     preco: 29.9,
     imagem:
@@ -36,7 +36,7 @@ const products = [
     categoria: "Lanches",
     descricaoCurta: "Frango empanado, queijo, alface e maionese temperada.",
     descricaoCompleta:
-      "Frango empanado crocante servido no pÃ£o macio com queijo, alface fresca " +
+      "Frango empanado crocante servido no pão macio com queijo, alface fresca " +
       "e maionese temperada da casa.",
     preco: 26.9,
     imagem:
@@ -70,11 +70,11 @@ const products = [
   },
   {
     id: 6,
-    nome: "Ãgua mineral",
+    nome: "Água mineral",
     categoria: "Bebidas",
-    descricaoCurta: "Ãgua mineral sem gÃ¡s 500ml.",
+    descricaoCurta: "Água mineral sem gás 500ml.",
     descricaoCompleta:
-      "Ãgua mineral sem gÃ¡s 500ml, ideal para uma opÃ§Ã£o leve e refrescante.",
+      "Água mineral sem gás 500ml, ideal para uma opção leve e refrescante.",
     preco: 4,
     imagem:
       "assets/products/agua-mineral.jpg",
@@ -121,11 +121,11 @@ const products = [
   },
   {
     id: 10,
-    nome: "Combo ClÃ¡ssico",
+    nome: "Combo Clássico",
     categoria: "Combos",
-    descricaoCurta: "Burger clÃ¡ssico, batata frita e refrigerante.",
+    descricaoCurta: "Burger clássico, batata frita e refrigerante.",
     descricaoCompleta:
-      "Combo com Burger ClÃ¡ssico, porÃ§Ã£o de batata frita crocante e refrigerante lata 350ml.",
+      "Combo com Burger Clássico, porção de batata frita crocante e refrigerante lata 350ml.",
     preco: 34.9,
     imagem:
       "assets/products/combo-classico.jpg",
@@ -146,11 +146,11 @@ const products = [
   },
   {
     id: 12,
-    nome: "Combo FamÃ­lia",
+    nome: "Combo Família",
     categoria: "Combos",
     descricaoCurta: "4 burgers, 2 batatas grandes e 4 refrigerantes.",
     descricaoCompleta:
-      "Combo para dividir com 4 burgers, 2 porÃ§Ãµes grandes de batata frita e 4 refrigerantes.",
+      "Combo para dividir com 4 burgers, 2 porções grandes de batata frita e 4 refrigerantes.",
     preco: 119.9,
     imagem:
       "assets/products/combo-familia.jpg",
@@ -199,7 +199,7 @@ function formatPrice(value) {
 }
 
 function createSingleWhatsappLink(productName) {
-  const message = `OlÃ¡! Quero pedir: ${productName}`;
+  const message = `Olá! Quero pedir: ${productName}`;
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
@@ -214,7 +214,7 @@ function createCartWhatsappLink() {
   const pixLine =
     paymentMethod === "Pix" ? `\nChave Pix: ${pixKey.textContent}` : "";
 
-  const message = `OlÃ¡! Quero fazer um pedido:\n\n${lines.join(
+  const message = `Olá! Quero fazer um pedido:\n\n${lines.join(
     "\n"
   )}\n\nTotal: ${formatPrice(
     getCartTotal()
@@ -546,7 +546,7 @@ copyPixKeyButton.addEventListener("click", async () => {
     await navigator.clipboard.writeText(pixKey.textContent);
     copyPixMessage.textContent = "Chave Pix copiada!";
   } catch {
-    copyPixMessage.textContent = "NÃ£o foi possÃ­vel copiar a chave Pix.";
+    copyPixMessage.textContent = "Não foi possível copiar a chave Pix.";
   }
 });
 

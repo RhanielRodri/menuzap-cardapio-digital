@@ -1,14 +1,14 @@
-const whatsappNumber = "5500000000000";
+﻿const whatsappNumber = "5500000000000";
 const placeholderImage = "assets/products/placeholder.jpg";
 
 const products = [
   {
     id: 1,
-    nome: "Burger Clássico",
+    nome: "Burger ClÃ¡ssico",
     categoria: "Lanches",
-    descricaoCurta: "Pão brioche, hambúrguer artesanal, queijo e molho da casa.",
+    descricaoCurta: "PÃ£o brioche, hambÃºrguer artesanal, queijo e molho da casa.",
     descricaoCompleta:
-      "Um clássico da Burger House com pão brioche macio, hambúrguer artesanal suculento, queijo derretido e molho da casa.",
+      "Um clÃ¡ssico da Burger House com pÃ£o brioche macio, hambÃºrguer artesanal suculento, queijo derretido e molho da casa.",
     preco: 24.9,
     imagem:
       "assets/products/burger-classico.jpg",
@@ -19,9 +19,9 @@ const products = [
     id: 2,
     nome: "Bacon Burger",
     categoria: "Lanches",
-    descricaoCurta: "Hambúrguer artesanal, queijo, bacon crocante e molho especial.",
+    descricaoCurta: "HambÃºrguer artesanal, queijo, bacon crocante e molho especial.",
     descricaoCompleta:
-      "Hambúrguer artesanal com queijo bem derretido, bacon crocante, salada fresca e molho especial levemente defumado.",
+      "HambÃºrguer artesanal com queijo bem derretido, bacon crocante, salada fresca e molho especial levemente defumado.",
     preco: 29.9,
     imagem:
       "assets/products/bacon-burger.jpg",
@@ -34,7 +34,7 @@ const products = [
     categoria: "Lanches",
     descricaoCurta: "Frango empanado, queijo, alface e maionese temperada.",
     descricaoCompleta:
-      "Frango empanado crocante servido no pão macio com queijo, alface fresca e maionese temperada da casa.",
+      "Frango empanado crocante servido no pÃ£o macio com queijo, alface fresca e maionese temperada da casa.",
     preco: 26.9,
     imagem:
       "assets/products/chicken-burger.jpg",
@@ -67,11 +67,11 @@ const products = [
   },
   {
     id: 6,
-    nome: "Água mineral",
+    nome: "Ãgua mineral",
     categoria: "Bebidas",
-    descricaoCurta: "Água mineral sem gás 500ml.",
+    descricaoCurta: "Ãgua mineral sem gÃ¡s 500ml.",
     descricaoCompleta:
-      "Água mineral sem gás 500ml, ideal para uma opção leve e refrescante.",
+      "Ãgua mineral sem gÃ¡s 500ml, ideal para uma opÃ§Ã£o leve e refrescante.",
     preco: 4,
     imagem:
       "assets/products/agua-mineral.jpg",
@@ -116,11 +116,11 @@ const products = [
   },
   {
     id: 10,
-    nome: "Combo Clássico",
+    nome: "Combo ClÃ¡ssico",
     categoria: "Combos",
-    descricaoCurta: "Burger clássico, batata frita e refrigerante.",
+    descricaoCurta: "Burger clÃ¡ssico, batata frita e refrigerante.",
     descricaoCompleta:
-      "Combo com Burger Clássico, porção de batata frita crocante e refrigerante lata 350ml.",
+      "Combo com Burger ClÃ¡ssico, porÃ§Ã£o de batata frita crocante e refrigerante lata 350ml.",
     preco: 34.9,
     imagem:
       "assets/products/combo-classico.jpg",
@@ -141,11 +141,11 @@ const products = [
   },
   {
     id: 12,
-    nome: "Combo Família",
+    nome: "Combo FamÃ­lia",
     categoria: "Combos",
     descricaoCurta: "4 burgers, 2 batatas grandes e 4 refrigerantes.",
     descricaoCompleta:
-      "Combo para dividir com 4 burgers, 2 porções grandes de batata frita e 4 refrigerantes.",
+      "Combo para dividir com 4 burgers, 2 porÃ§Ãµes grandes de batata frita e 4 refrigerantes.",
     preco: 119.9,
     imagem:
       "assets/products/combo-familia.jpg",
@@ -194,7 +194,7 @@ function formatPrice(value) {
 }
 
 function createSingleWhatsappLink(productName) {
-  const message = `Olá! Quero pedir: ${productName}`;
+  const message = `OlÃ¡! Quero pedir: ${productName}`;
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
 
@@ -209,7 +209,7 @@ function createCartWhatsappLink() {
   const pixLine =
     paymentMethod === "Pix" ? `\nChave Pix: ${pixKey.textContent}` : "";
 
-  const message = `Olá! Quero fazer um pedido:\n\n${lines.join(
+  const message = `OlÃ¡! Quero fazer um pedido:\n\n${lines.join(
     "\n"
   )}\n\nTotal: ${formatPrice(
     getCartTotal()
@@ -331,53 +331,25 @@ function renderCart() {
     const cartItem = document.createElement("div");
     cartItem.className = "cart-item";
 
-    const itemInfo = document.createElement("div");
-    itemInfo.className = "cart-item-info";
+    cartItem.innerHTML = `
+      <div class="cart-item-info">
+        <strong>${product.nome}</strong>
+        <span>${formatPrice(product.preco * item.quantity)}</span>
+      </div>
 
-    const itemName = document.createElement("strong");
-    itemName.textContent = product.nome;
-
-    const itemSubtotal = document.createElement("span");
-    itemSubtotal.textContent = formatPrice(product.preco * item.quantity);
-
-    const itemActions = document.createElement("div");
-    itemActions.className = "cart-item-actions";
-    itemActions.setAttribute("aria-label", `Quantidade de ${product.nome}`);
-
-    const decreaseButton = createCartActionButton({
-      action: "decrease",
-      productId: product.id,
-      label: "−",
-      ariaLabel: "Diminuir quantidade"
-    });
-
-    const quantityText = document.createElement("span");
-    quantityText.textContent = item.quantity;
-
-    const increaseButton = createCartActionButton({
-      action: "increase",
-      productId: product.id,
-      label: "+",
-      ariaLabel: "Aumentar quantidade"
-    });
-
-    const removeButton = createCartActionButton({
-      action: "remove",
-      productId: product.id,
-      label: "Remover",
-      ariaLabel: "Remover item"
-    });
-
-    itemInfo.appendChild(itemName);
-    itemInfo.appendChild(itemSubtotal);
-
-    itemActions.appendChild(decreaseButton);
-    itemActions.appendChild(quantityText);
-    itemActions.appendChild(increaseButton);
-    itemActions.appendChild(removeButton);
-
-    cartItem.appendChild(itemInfo);
-    cartItem.appendChild(itemActions);
+      <div class="cart-item-actions">
+        <button type="button" data-action="decrease" data-id="${product.id}">
+          −
+        </button>
+        <span>${item.quantity}</span>
+        <button type="button" data-action="increase" data-id="${product.id}">
+          +
+        </button>
+        <button type="button" data-action="remove" data-id="${product.id}">
+          Remover
+        </button>
+      </div>
+    `;
 
     cartItems.appendChild(cartItem);
   });
@@ -552,7 +524,7 @@ copyPixKeyButton.addEventListener("click", async () => {
     await navigator.clipboard.writeText(pixKey.textContent);
     copyPixMessage.textContent = "Chave Pix copiada!";
   } catch {
-    copyPixMessage.textContent = "Não foi possível copiar a chave Pix.";
+    copyPixMessage.textContent = "NÃ£o foi possÃ­vel copiar a chave Pix.";
   }
 });
 

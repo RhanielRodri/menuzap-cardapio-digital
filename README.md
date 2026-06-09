@@ -9,41 +9,41 @@ MenuZap é um cardápio digital responsivo criado para pequenos negócios recebe
 
 ## Demonstração
 
-- Projeto publicado: https://menuzap-cardapio-digital.vercel.app/
-- Gerador de QR Code: https://menuzap-cardapio-digital.vercel.app/qrcode.html
+* Projeto publicado: https://menuzap-cardapio-digital.vercel.app/
+* Gerador de QR Code: https://menuzap-cardapio-digital.vercel.app/qrcode.html
 
 ## Problema que o projeto resolve
 
-Muitos pequenos negócios recebem pedidos pelo WhatsApp de forma manual: enviam cardápio, chave Pix, confirmam itens um por um e calculam o total durante a conversa.
+Muitos pequenos negócios recebem pedidos pelo WhatsApp de forma manual. O atendimento costuma envolver envio de cardápio, confirmação de itens, cálculo do total e envio da chave Pix durante a conversa.
 
-O MenuZap organiza esse fluxo com um cardápio digital, carrinho, seleção de forma de pagamento, Pix facilitado e pedido pronto para envio no WhatsApp.
+O MenuZap organiza esse fluxo com cardápio digital, carrinho, seleção de forma de pagamento, Pix facilitado e pedido pronto para envio no WhatsApp.
 
 ## Funcionalidades
 
-- Cardápio digital responsivo
-- Busca de produtos em tempo real
-- Filtros por categoria
-- Cards de produtos com imagem, descrição e preço
-- Modal com detalhes do produto
-- Carrinho com adicionar, aumentar, diminuir e remover itens
-- Cálculo automático do total
-- Seleção de forma de pagamento
-- Chave Pix exibida somente quando Pix é selecionado
-- Copiar chave Pix
-- Finalização do pedido pelo WhatsApp
-- Mensagem automática com itens, total e forma de pagamento
-- Gerador de QR Code para o cardápio
-- Download do QR Code
-- Layout adaptado para celular
+* Cardápio digital responsivo
+* Busca de produtos em tempo real
+* Filtros por categoria
+* Cards de produtos com imagem, descrição e preço
+* Modal com detalhes do produto
+* Carrinho com adicionar, aumentar, diminuir e remover itens
+* Cálculo automático do total
+* Seleção de forma de pagamento
+* Chave Pix exibida somente quando Pix é selecionado
+* Copiar chave Pix
+* Finalização do pedido pelo WhatsApp
+* Mensagem automática com itens, total e forma de pagamento
+* Gerador de QR Code para o cardápio
+* Download do QR Code
+* Layout adaptado para celular
 
-## Tecnologias Utilizadas
+## Tecnologias utilizadas
 
-- HTML5
-- CSS3
-- JavaScript
-- Vercel
+* HTML5
+* CSS3
+* JavaScript
+* Vercel
 
-## Estrutura do Projeto
+## Estrutura do projeto
 
 ```text
 menuzap-cardapio-digital/
@@ -57,7 +57,7 @@ menuzap-cardapio-digital/
 └── README.md
 ```
 
-## Como Rodar Localmente
+## Como rodar localmente
 
 1. Clone o repositório:
 
@@ -75,37 +75,37 @@ cd menuzap-cardapio-digital
 
 Por ser um projeto com HTML, CSS e JavaScript puro, não é necessário instalar dependências, configurar backend ou rodar build.
 
-## Fluxo do Usuário
+## Fluxo do usuário
 
-1. O cliente acessa o cardápio pelo link ou QR Code.
+1. Cliente acessa o cardápio pelo link ou QR Code.
 2. Escolhe os produtos.
 3. Adiciona os itens ao carrinho.
 4. Seleciona a forma de pagamento.
-5. Finaliza pelo WhatsApp com uma mensagem pronta contendo itens, total e forma de pagamento.
+5. Finaliza pelo WhatsApp com mensagem pronta.
 
-## Observação Sobre Pagamento
+## Observação sobre pagamento
 
 Este projeto não processa pagamentos reais nem confirma Pix automaticamente.
 
 A função Pix é um facilitador: exibe a chave Pix, permite copiar a chave e envia a informação junto ao pedido pelo WhatsApp.
 
-## Próximas Melhorias
+## Próximas melhorias
 
-- Painel administrativo para editar produtos
-- Integração com API de pagamento Pix
-- Histórico de pedidos
-- Controle de status do pedido
-- Backend com Node.js ou FastAPI
-- Banco de dados
+* Painel administrativo para editar produtos
+* Integração com API de pagamento Pix
+* Histórico de pedidos
+* Controle de status do pedido
+* Backend com Node.js ou FastAPI
+* Banco de dados
 
 ## Aprendizados
 
-- Manipulação de DOM com JavaScript
-- Estado de carrinho no front-end
-- Geração de mensagens dinâmicas para WhatsApp
-- Responsividade
-- Organização de fluxo de pedido
-- Deploy na Vercel
+* Manipulação de DOM com JavaScript
+* Estado de carrinho no front-end
+* Geração de mensagens dinâmicas para WhatsApp
+* Responsividade
+* Organização de fluxo de pedido
+* Deploy na Vercel
 
 ## Autor
 

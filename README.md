@@ -1,114 +1,65 @@
 # MenuZap | Cardápio Digital com QR Code
 
-MenuZap é um cardápio digital responsivo criado para pequenos negócios receberem pedidos pelo WhatsApp de forma simples, rápida e organizada.
+Cardápio digital responsivo para pequenos negócios receberem pedidos pelo WhatsApp — sem app, sem mensalidade, sem plataforma de terceiros.
 
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![Em produção](https://img.shields.io/badge/status-live-brightgreen)
 
-## Demonstração
+## Demo
 
-* Projeto publicado: https://menuzap-cardapio-digital.vercel.app/
-* Gerador de QR Code: https://menuzap-cardapio-digital.vercel.app/qrcode.html
-
-## Problema que o projeto resolve
-
-Muitos pequenos negócios recebem pedidos pelo WhatsApp de forma manual. O atendimento costuma envolver envio de cardápio, confirmação de itens, cálculo do total e envio da chave Pix durante a conversa.
-
-O MenuZap organiza esse fluxo com cardápio digital, carrinho, seleção de forma de pagamento, Pix facilitado e pedido pronto para envio no WhatsApp.
+| | URL |
+|---|---|
+| **Cardápio** | https://menuzap-cardapio-digital.vercel.app/ |
+| **Gerador de QR Code** | https://menuzap-cardapio-digital.vercel.app/qrcode.html |
 
 ## Funcionalidades
 
-* Cardápio digital responsivo
-* Busca de produtos em tempo real
-* Filtros por categoria
-* Cards de produtos com imagem, descrição e preço
-* Modal com detalhes do produto
-* Carrinho com adicionar, aumentar, diminuir e remover itens
-* Cálculo automático do total
-* Seleção de forma de pagamento
-* Chave Pix exibida somente quando Pix é selecionado
-* Copiar chave Pix
-* Finalização do pedido pelo WhatsApp
-* Mensagem automática com itens, total e forma de pagamento
-* Gerador de QR Code para o cardápio
-* Download do QR Code
-* Layout adaptado para celular
+- Cardápio com busca em tempo real e filtros por categoria
+- Modal de detalhes do produto
+- Carrinho com controle de quantidade e cálculo automático do total
+- Seleção de forma de pagamento (Pix ou dinheiro)
+- Chave Pix exibida e copiável apenas quando Pix é selecionado
+- Finalização com mensagem pronta no WhatsApp (itens, total, pagamento)
+- Gerador de QR Code para o cardápio com download em PNG
+- Layout 100% responsivo para celular
 
-## Tecnologias utilizadas
+## Tecnologias
 
-* HTML5
-* CSS3
-* JavaScript
-* Vercel
+- HTML5, CSS3, JavaScript vanilla
+- Deploy: Vercel
 
-## Estrutura do projeto
+## Screenshots
 
-```text
-menuzap-cardapio-digital/
-├── index.html
-├── qrcode.html
-├── style.css
-├── script.js
-├── qrcode.js
-├── assets/
-│   └── products/
-└── README.md
-```
+### Cardápio — desktop
+![Cardápio desktop](docs/screenshots/cardapio-desktop.png)
+
+### Cardápio — mobile
+![Cardápio mobile](docs/screenshots/cardapio-mobile.png)
+
+### Carrinho com itens
+![Carrinho](docs/screenshots/carrinho-desktop.png)
+
+### Gerador de QR Code
+![QR Code](docs/screenshots/qrcode-desktop.png)
 
 ## Como rodar localmente
 
-1. Clone o repositório:
-
 ```bash
 git clone https://github.com/RhanielRodri/menuzap-cardapio-digital.git
-```
-
-2. Acesse a pasta do projeto:
-
-```bash
 cd menuzap-cardapio-digital
 ```
 
-3. Abra o arquivo `index.html` no navegador.
+Abra `index.html` diretamente no navegador. Sem dependências, sem build.
 
-Por ser um projeto com HTML, CSS e JavaScript puro, não é necessário instalar dependências, configurar backend ou rodar build.
+## O que este projeto demonstra
 
-## Fluxo do usuário
-
-1. Cliente acessa o cardápio pelo link ou QR Code.
-2. Escolhe os produtos.
-3. Adiciona os itens ao carrinho.
-4. Seleciona a forma de pagamento.
-5. Finaliza pelo WhatsApp com mensagem pronta.
-
-## Observação sobre pagamento
-
-Este projeto não processa pagamentos reais nem confirma Pix automaticamente.
-
-A função Pix é um facilitador: exibe a chave Pix, permite copiar a chave e envia a informação junto ao pedido pelo WhatsApp.
-
-## Próximas melhorias
-
-* Painel administrativo para editar produtos
-* Integração com API de pagamento Pix
-* Histórico de pedidos
-* Controle de status do pedido
-* Backend com Node.js ou FastAPI
-* Banco de dados
-
-## Aprendizados
-
-* Manipulação de DOM com JavaScript
-* Estado de carrinho no front-end
-* Geração de mensagens dinâmicas para WhatsApp
-* Responsividade
-* Organização de fluxo de pedido
-* Deploy na Vercel
+- **Manipulação de DOM sem framework**: carrinho, filtros e busca implementados em JS puro com estado gerenciado manualmente
+- **Integração com WhatsApp via deep link formatado**: mensagem gerada dinamicamente com itens, quantidades, total e forma de pagamento
+- **Geração de QR Code no browser**: usando a biblioteca QRCode.js sem backend
+- **Lógica condicional de pagamento**: Pix só aparece quando selecionado, com copy-to-clipboard nativo
+- **Layout responsivo sem framework CSS**: breakpoints definidos manualmente para mobile-first
 
 ## Autor
 
-Rhaniel Rodrigues
+Desenvolvido por Rhaniel Rodrigues.
 
 GitHub: https://github.com/RhanielRodri

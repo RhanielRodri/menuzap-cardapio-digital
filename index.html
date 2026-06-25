@@ -8,6 +8,31 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316a34a'/%3E%3Cpath fill='white' d='M18 18h28v6H18zm0 11h28v6H18zm0 11h18v6H18z'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+    }
+    .lang-toggle button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      opacity: 0.45;
+      padding: 0;
+      color: inherit;
+    }
+    .lang-toggle button.lang-active {
+      font-weight: 800;
+      opacity: 1;
+    }
+    .lang-toggle span {
+      opacity: 0.3;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,30 +40,37 @@
     <nav class="navbar" aria-label="Navegação principal">
       <a class="brand" href="index.html">MenuZap</a>
       <div class="nav-links">
-        <a href="#demonstracao">Demonstração</a>
-        <a href="#cardapio">Cardápio</a>
-        <a href="qrcode.html">QR Code</a>
-        <a href="#contato">Contato</a>
+        <a href="#demonstracao" data-i18n="nav_demo">Demonstração</a>
+        <a href="#cardapio" data-i18n="nav_menu">Cardápio</a>
+        <a href="qrcode.html" data-i18n="nav_qrcode">QR Code</a>
+        <a href="#contato" data-i18n="nav_contact">Contato</a>
       </div>
-      <a class="nav-button" href="qrcode.html">Gerar QR</a>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="lang-toggle">
+          <button id="langPT" type="button" class="lang-active" aria-pressed="true">PT</button>
+          <span>|</span>
+          <button id="langEN" type="button" aria-pressed="false">EN</button>
+        </div>
+        <a class="nav-button" href="qrcode.html" data-i18n="nav_qr_btn">Gerar QR</a>
+      </div>
     </nav>
   </header>
 
   <main>
     <section class="hero" id="demonstracao">
       <div class="hero-content">
-        <span class="eyebrow">
+        <span class="eyebrow" data-i18n="hero_eyebrow">
           Solução demonstrativa para negócios locais
         </span>
-        <h1>Cardápio digital com QR Code e pedidos pelo WhatsApp</h1>
-        <p>
+        <h1 data-i18n="hero_title">Cardápio digital com QR Code e pedidos pelo WhatsApp</h1>
+        <p data-i18n="hero_desc">
           Uma solução simples para pequenos negócios receberem pedidos sem
           aplicativo, sem taxa e sem complicação.
         </p>
 
         <div class="hero-actions">
-          <a class="primary-button" href="#cardapio">Ver demonstração</a>
-          <a class="secondary-button light" href="qrcode.html">
+          <a class="primary-button" href="#cardapio" data-i18n="hero_btn_demo">Ver demonstração</a>
+          <a class="secondary-button light" href="qrcode.html" data-i18n="hero_btn_qr">
             Gerar QR Code
           </a>
         </div>
@@ -49,54 +81,55 @@
       <div>
         <span class="eyebrow">Demo MenuZap</span>
         <h2>Burger House</h2>
-        <p>Aberto hoje das 18h às 23h</p>
+        <p data-i18n="strip_hours">Aberto hoje das 18h às 23h</p>
       </div>
       <div class="demo-metrics">
-        <span>Busca rápida</span>
-        <span>Carrinho completo</span>
-        <span>Pedido no WhatsApp</span>
+        <span data-i18n="strip_metric_1">Busca rápida</span>
+        <span data-i18n="strip_metric_2">Carrinho completo</span>
+        <span data-i18n="strip_metric_3">Pedido no WhatsApp</span>
       </div>
     </section>
 
     <section class="menu-section" id="cardapio">
       <div class="section-heading">
-        <span class="eyebrow">Cardápio da demonstração</span>
-        <h2>Escolha os itens do pedido</h2>
-        <p>
+        <span class="eyebrow" data-i18n="menu_eyebrow">Cardápio da demonstração</span>
+        <h2 data-i18n="menu_title">Escolha os itens do pedido</h2>
+        <p data-i18n="menu_desc">
           Filtre por categoria, veja os detalhes e monte um pedido completo para
           enviar pelo WhatsApp.
         </p>
       </div>
 
       <div class="menu-controls">
-        <label class="search-label" for="searchInput">Buscar produto</label>
+        <label class="search-label" for="searchInput" data-i18n="search_label">Buscar produto</label>
         <input
           id="searchInput"
           type="search"
           placeholder="Buscar produto..."
+          data-i18n-placeholder="search_placeholder"
           autocomplete="off"
         >
         <div class="filter-buttons" aria-label="Filtros por categoria">
-          <button class="filter-button active" type="button" data-category="Todos">
+          <button class="filter-button active" type="button" data-category="Todos" data-i18n="filter_all">
             Todos
           </button>
-          <button class="filter-button" type="button" data-category="Lanches">
+          <button class="filter-button" type="button" data-category="Lanches" data-i18n="filter_snacks">
             Lanches
           </button>
-          <button class="filter-button" type="button" data-category="Bebidas">
+          <button class="filter-button" type="button" data-category="Bebidas" data-i18n="filter_drinks">
             Bebidas
           </button>
-          <button class="filter-button" type="button" data-category="Sobremesas">
+          <button class="filter-button" type="button" data-category="Sobremesas" data-i18n="filter_desserts">
             Sobremesas
           </button>
-          <button class="filter-button" type="button" data-category="Combos">
+          <button class="filter-button" type="button" data-category="Combos" data-i18n="filter_combos">
             Combos
           </button>
         </div>
       </div>
 
       <div class="products-grid" id="productsGrid" aria-live="polite"></div>
-      <p class="empty-state" id="emptyState" hidden>Nenhum produto encontrado.</p>
+      <p class="empty-state" id="emptyState" hidden data-i18n="empty_state">Nenhum produto encontrado.</p>
     </section>
   </main>
 
@@ -104,9 +137,10 @@
     class="cart-float"
     id="openCart"
     type="button"
+    data-i18n-aria="aria_open_cart"
     aria-label="Abrir carrinho"
   >
-    <span>Ver pedido</span>
+    <span data-i18n="cart_float_label">Ver pedido</span>
     <strong id="cartCount">0 itens</strong>
   </button>
 
@@ -118,23 +152,24 @@
   >
     <div class="cart-header">
       <div>
-        <span class="eyebrow">Seu pedido</span>
-        <h2 id="cartTitle">Resumo do pedido</h2>
+        <span class="eyebrow" data-i18n="cart_eyebrow">Seu pedido</span>
+        <h2 id="cartTitle" data-i18n="cart_title">Resumo do pedido</h2>
       </div>
       <button
         class="icon-button"
         id="closeCart"
         type="button"
+        data-i18n-aria="aria_close_cart"
         aria-label="Fechar carrinho"
       >
         ×
       </button>
     </div>
     <div class="cart-items" id="cartItems"></div>
-    <p class="cart-empty" id="cartEmpty">Seu pedido está vazio.</p>
+    <p class="cart-empty" id="cartEmpty" data-i18n="cart_empty_msg">Seu pedido está vazio.</p>
     <div class="cart-footer">
       <section class="payment-box" aria-labelledby="paymentTitle">
-        <h3 id="paymentTitle">Forma de pagamento</h3>
+        <h3 id="paymentTitle" data-i18n="payment_title">Forma de pagamento</h3>
 
         <div class="payment-options">
           <label class="payment-option">
@@ -144,7 +179,7 @@
 
           <label class="payment-option">
             <input type="radio" name="paymentMethod" value="Dinheiro">
-            <span>Dinheiro</span>
+            <span data-i18n="payment_cash">Dinheiro</span>
           </label>
 
           <label class="payment-option">
@@ -153,14 +188,14 @@
               name="paymentMethod"
               value="Cartão na entrega/retirada"
             >
-            <span>Cartão na entrega/retirada</span>
+            <span data-i18n="payment_card">Cartão na entrega/retirada</span>
           </label>
         </div>
 
         <div class="pix-box" id="pixBox">
-          <span>Chave Pix</span>
+          <span data-i18n="pix_label">Chave Pix</span>
           <strong id="pixKey">pix@burgerhouse.com</strong>
-          <button class="copy-pix-button" id="copyPixKey" type="button">
+          <button class="copy-pix-button" id="copyPixKey" type="button" data-i18n="pix_copy_btn">
             Copiar chave Pix
           </button>
           <p class="copy-message" id="copyPixMessage" aria-live="polite" hidden></p>
@@ -168,7 +203,7 @@
       </section>
 
       <div class="cart-total">
-        <span>Total</span>
+        <span data-i18n="total_label">Total</span>
         <strong id="cartTotal">R$ 0,00</strong>
       </div>
       <a
@@ -178,6 +213,7 @@
         target="_blank"
         rel="noopener"
         aria-disabled="true"
+        data-i18n="finish_btn"
       >
         Finalizar pelo WhatsApp
       </a>
@@ -197,6 +233,7 @@
         class="modal-close"
         type="button"
         id="closeModal"
+        data-i18n-aria="aria_close_modal"
         aria-label="Fechar modal"
       >
         ×
@@ -208,7 +245,7 @@
         <p id="modalDescription"></p>
         <strong id="modalPrice"></strong>
         <div class="modal-actions">
-          <button class="primary-button" id="modalAddToCart" type="button">
+          <button class="primary-button" id="modalAddToCart" type="button" data-i18n="modal_add_btn">
             Adicionar ao pedido
           </button>
           <a
@@ -217,6 +254,7 @@
             href="#"
             target="_blank"
             rel="noopener"
+            data-i18n="modal_single_btn"
           >
             Pedir somente este item
           </a>
@@ -228,15 +266,15 @@
   <footer class="footer" id="contato">
     <div>
       <strong>MenuZap</strong>
-      <p>Solução demonstrativa para cardápios digitais.</p>
+      <p data-i18n="footer_tagline">Solução demonstrativa para cardápios digitais.</p>
     </div>
     <div>
       <strong>Burger House</strong>
       <p>Rua das Palmeiras, 123 - Centro</p>
     </div>
     <div>
-      <strong>Horário</strong>
-      <p>Segunda a domingo, das 18h às 23h</p>
+      <strong data-i18n="footer_hours_title">Horário</strong>
+      <p data-i18n="footer_hours">Segunda a domingo, das 18h às 23h</p>
     </div>
     <div>
       <strong>WhatsApp</strong>
@@ -244,6 +282,7 @@
     </div>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="script.js"></script>
 </body>
 

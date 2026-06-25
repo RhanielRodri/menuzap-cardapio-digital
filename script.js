@@ -268,7 +268,7 @@ function renderProducts() {
     card.dataset.id = product.id;
 
     card.innerHTML = `
-${product.maisPedido ? '<span class="badge">Mais pedido</span>' : ""} <img src="${product.imagem}" alt="${product.nome}" loading="lazy">
+${product.maisPedido ? `<span class="badge">${t.badge_popular}</span>` : ""} <img src="${product.imagem}" alt="${product.nome}" loading="lazy">
 
   <div class="product-info">
     <span class="product-category">${product.categoria}</span>
@@ -276,7 +276,7 @@ ${product.maisPedido ? '<span class="badge">Mais pedido</span>' : ""} <img src="
     <p>${product.descricaoCurta}</p>
     <strong class="price">${formatPrice(product.preco)}</strong>
     <button class="add-button" type="button" data-id="${product.id}">
-      Adicionar ao pedido
+      ${t.btn_add}
     </button>
   </div>
 `;
@@ -308,7 +308,7 @@ function renderCart() {
 
   cartItems.innerHTML = "";
   cartEmpty.hidden = cart.length > 0;
-  cartCount.textContent = quantity === 1 ? "1 item" : `${quantity} itens`;
+  cartCount.textContent = t.cart_count(quantity);
   cartTotal.textContent = formatPrice(total);
 
   if (cart.length === 0) {
@@ -331,10 +331,10 @@ function renderCart() {
       </div>
 
       <div class="cart-item-actions">
-        <button type="button" data-action="decrease" data-id="${product.id}" aria-label="Diminuir quantidade de ${product.nome}">&minus;</button>
+        <button type="button" data-action="decrease" data-id="${product.id}" aria-label="${t.aria_decrease(product.nome)}">&minus;</button>
         <span>${item.quantity}</span>
-        <button type="button" data-action="increase" data-id="${product.id}" aria-label="Aumentar quantidade de ${product.nome}">+</button>
-        <button type="button" data-action="remove" data-id="${product.id}">Remover</button>
+        <button type="button" data-action="increase" data-id="${product.id}" aria-label="${t.aria_increase(product.nome)}">+</button>
+        <button type="button" data-action="remove" data-id="${product.id}">${t.cart_remove}</button>
       </div>
     `;
 
@@ -499,9 +499,9 @@ copyPixKeyButton.addEventListener("click", async () => {
 
   try {
     await navigator.clipboard.writeText(pixKey.textContent);
-    copyPixMessage.textContent = "Chave Pix copiada!";
+    copyPixMessage.textContent = t.pix_copied;
   } catch {
-    copyPixMessage.textContent = "Não foi possível copiar a chave Pix.";
+    copyPixMessage.textContent = t.pix_copy_error;
   }
   copyPixMessage.hidden = false;
 });
